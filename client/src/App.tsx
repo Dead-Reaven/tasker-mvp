@@ -1,9 +1,11 @@
-import { Provider } from '@/components/ui/provider'
+import { Button, HStack } from '@chakra-ui/react'
+
 function App() {
 	return (
-		<div>
-			<Provider></Provider>
-		</div>
+		<HStack gap={4}>
+			<Button>Click me</Button>
+			<Button>Click me</Button>
+		</HStack>
 	)
 }
 

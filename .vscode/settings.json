@@ -9,12 +9,14 @@
 		"client/dist": true,
 		"client/node_modules": true,
 		"api/node_modules": true,
-		"api/dist": true
+		"api/dist": true,
+		"client/src/vite-env.d.ts": true
 	},
 	"hide-files.files": [
 		"client/dist",
 		"client/node_modules",
 		"api/node_modules",
-		"api/dist"
+		"api/dist",
+		"client/src/vite-env.d.ts"
 	]
 }
