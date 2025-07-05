@@ -1,11 +1,12 @@
 import Header from '@/components/Header'
-import { Container } from '@chakra-ui/react'
+import Wrapper from '@/components/ui/Wrapper'
+import { Outlet } from 'react-router'
 
 export default function RootLayout() {
 	return (
-		<Container centerContent minH="100vh">
+		<Wrapper minH="100vh">
 			<Header />
-			<slot></slot>
-		</Container>
+			<Outlet />
+		</Wrapper>
 	)
 }
