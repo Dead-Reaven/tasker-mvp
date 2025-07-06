@@ -17,6 +17,5 @@ export default function useBreakPoint() {
 }
 
 function parsePxToNumber(str: keyof typeof breakpoints) {
-	const value = breakpoints[str]
-	return parseInt(str.slice(0, value.length - 2))
+	return parseInt(breakpoints[str])
 }

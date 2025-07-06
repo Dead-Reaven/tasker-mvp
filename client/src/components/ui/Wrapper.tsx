@@ -10,7 +10,7 @@ export default function Wrapper({ children, ...props }: IWrapper) {
 		<Container
 			centerContent
 
-			px={[2, 4, 6, 8]}
+			px={[4, 6, 8, 10]}
 			pos={'relative'}
 			{...props}
 		>

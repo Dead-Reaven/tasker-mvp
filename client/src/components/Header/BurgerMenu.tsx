@@ -1,30 +1,59 @@
-import { Button, CloseButton, Drawer, Portal } from '@chakra-ui/react'
+import { CloseButton, Drawer, Portal, VStack } from '@chakra-ui/react'
 import Avatar from '../ui/Avatar'
+import { FiAlignJustify } from 'react-icons/fi'
+import { NavItems } from './NavItems'
 
 export default function BurgerMenu() {
 	return (
-		<Drawer.Root size={'lg'}>
-			<Drawer.Trigger asChild>
-				<Button variant="outline">Open Drawer</Button>
-			</Drawer.Trigger>
+		<Root size={'lg'} placement={'start'}>
+			<Trigger asChild>
+				<FiAlignJustify size={40} />
+			</Trigger>
 			<Portal>
-				<Drawer.Backdrop />
-				<Drawer.Positioner padding={1}>
-					<Drawer.Content r={'16px'} rounded={20}>
-						<Drawer.Header>
-							<Drawer.Title>
+				<Backdrop />
+				<Positioner padding={1}>
+					<Content r={'16px'} rounded={20} h={'full'}>
+						<Header>
+							<Title>
 								<Avatar />
-							</Drawer.Title>
-						</Drawer.Header>
+							</Title>
+						</Header>
+						<Context>
+							{(state) => (
+								<Body h={'full'}>
+									<VStack
+										gap={10}
+										fontSize={40}
+										justify={'center'}
+										h={'full'}
+									>
+										<NavItems
+											onClick={() => state.setOpen(false)}
+										/>
+									</VStack>
+								</Body>
+							)}
+						</Context>
 
-						<Drawer.Body></Drawer.Body>
-
-						<Drawer.CloseTrigger asChild>
-							<CloseButton size="sm" />
-						</Drawer.CloseTrigger>
-					</Drawer.Content>
-				</Drawer.Positioner>
+						<CloseTrigger asChild>
+							<CloseButton size="lg" />
+						</CloseTrigger>
+					</Content>
+				</Positioner>
 			</Portal>
-		</Drawer.Root>
+		</Root>
 	)
 }
+
+const {
+	Root,
+	Backdrop,
+	Body,
+	CloseTrigger,
+	Content,
+	Header,
+	Positioner,
+	Title,
+	Trigger,
+	Context,
+} = Drawer

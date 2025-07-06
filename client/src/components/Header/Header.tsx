@@ -3,13 +3,11 @@ import Wrapper from '../ui/Wrapper'
 
 import BurgerMenu from './BurgerMenu'
 import Avatar from '../ui/Avatar'
-import { MenuItems } from './MenuItems'
+import { NavItems } from './NavItems'
 import useBreakPoint from '@/hooks/useBreakPoint'
 
 export default function Header() {
-	const hook = useBreakPoint()
-
-    console.log(hook)
+	const breakpoint = useBreakPoint()
 	return (
 		<Center pos={'relative'} w={'full'} h={'80px'} bg="white">
 			<Wrapper pos={'fixed'} bg="white" h={'80px'}>
@@ -21,8 +19,7 @@ export default function Header() {
 					wrap="wrap"
 					gap={[1, 4, 6, 8]}
 				>
-					<MenuItems />
-					<BurgerMenu />
+					{breakpoint.isMobile ? <BurgerMenu /> : <NavItems />}
 					<Spacer />
 					<Avatar />
 				</Flex>

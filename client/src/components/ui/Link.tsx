@@ -1,10 +1,18 @@
-import { chakra } from "@chakra-ui/react";
-import type { ReactNode } from "react";
-import { NavLink, useLocation } from "react-router";
+import { chakra } from '@chakra-ui/react'
+import type { ReactNode } from 'react'
+import { NavLink, useLocation, type LinkProps } from 'react-router'
 
 const StyledNavLink = chakra(NavLink)
 
-export default function Link({ href, children }: { href: string; children: ReactNode }) {
+export default function Link({
+	href,
+	children,
+	...props
+}: {
+	href: string
+	children: ReactNode
+	props?: LinkProps
+}) {
 	const location = useLocation()
 	const isActive = location.pathname === href
 
@@ -24,9 +32,9 @@ export default function Link({ href, children }: { href: string; children: React
 			display="flex"
 			alignItems="center"
 			gap={3}
+			{...props}
 		>
 			{children}
 		</StyledNavLink>
 	)
 }
-
