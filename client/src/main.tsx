@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { Provider } from './components/ui/provider.tsx'
+import { Provider } from './components/ui/Provider.tsx'
 import { BrowserRouter } from 'react-router'
 import App from './App.tsx'
 

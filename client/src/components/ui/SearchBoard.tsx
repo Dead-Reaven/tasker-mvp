@@ -11,7 +11,11 @@ export default function SearchBoard() {
 			bg={'white'}
 			pb={4} /*  pt={2} */
 		>
-			<Input type="text" placeholder="Enter board name..."></Input>
+			<Input
+				type="text"
+				placeholder="Enter board name..."
+				variant={'flushed'}
+			></Input>
 			<Button colorPalette={'purple'} variant={'solid'}>
 				<BiSearch></BiSearch>
 			</Button>
