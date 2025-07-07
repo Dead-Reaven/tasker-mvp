@@ -28,6 +28,7 @@ export default function BurgerMenu() {
 										h={'full'}
 									>
 										<NavItems
+											w={'full'}
 											onClick={() => state.setOpen(false)}
 										/>
 									</VStack>
