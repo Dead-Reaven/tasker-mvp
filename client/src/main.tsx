@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Provider from '@/components/ui/Provider'
+import Provider from '@/components/Chakra/provider'
 import { BrowserRouter } from 'react-router'
 import App from './App'
 
@@ -11,5 +11,5 @@ createRoot(document.getElementById('root')!).render(
 				<App />
 			</Provider>
 		</BrowserRouter>
-	</StrictMode>
+	</StrictMode>,
 )

@@ -1,5 +1,8 @@
 import { ChakraProvider } from '@chakra-ui/react'
-import { ColorModeProvider, type ColorModeProviderProps } from './color-mode'
+import {
+	ColorModeProvider,
+	type ColorModeProviderProps,
+} from './color-mode'
 import { theme } from '../../../theme'
 
 export default function Provider(props: ColorModeProviderProps) {
